@@ -2,7 +2,9 @@
   --medium-grey: #828FA3;
   --main-purple: #635FC7;
   --main-purple-hover: #A8A4FF;
-  --light-grey-bg: #F4F7FD
+  --light-grey-bg: #F4F7FD;
+  --black: #000112;
+  --light-grey: #E4EBFA;
 }
 
 body {
@@ -22,14 +24,20 @@ code {
     monospace;
 }
 
+.App {
+  display: flex;
+}
+
 
 .sidebar {
   width: 300px;
-  height: 100%;
-  position: absolute;
+  min-height: 100vh;
+  /* position: absolute; */
   background-color: white;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid var(--light-grey);
 }
 
 .sidebar-heading {
@@ -43,7 +51,6 @@ code {
 .board-counter {
   margin-left: 30px;
   font-size: 12px;
-  color: var(--medium-grey);
   font-weight: 700;
   letter-spacing: 2.4px;
   margin-bottom: 20px;
@@ -67,6 +74,10 @@ code {
   cursor: pointer;
 }
 
+.board-selector[data-board="create-new-board"] {
+  color: var(--main-purple)
+}
+
 .board-selector:hover {
   background-color: var(--main-purple-hover);
   color: white;
@@ -77,6 +88,21 @@ code {
   color: white;
 }
 
+
+
+
+.board-selector-icon {
+  margin-right: 15px;
+}
+
+.board-selector[data-board="active"]>.board-selector-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(200%) contrast(103%);
+}
+
+.board-selector:hover>.board-selector-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(200%) contrast(103%);
+}
+
 .brightness-mode {
   margin: auto 30px 20px 30px;
   background-color: var(--light-grey-bg);
@@ -85,6 +111,7 @@ code {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
+  column-gap: 20px;
 }
 
 .toggleSidebar {
@@ -92,4 +119,79 @@ code {
   margin-left: 30px;
   margin-bottom: 30px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggleSidebar > img {
+  margin-right: 15px;
+}
+
+.main-container {
+  width: 100%;
+}
+
+/* Main styles */
+.main-heading {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 30px 25px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.main-board-name {
+  margin: 0 auto 0 0;
+  font-size: 24px;
+  color:  var(--black);
+  font-weight: 700;
+}
+
+.add-new-task {
+  background-color: var(--main-purple);
+  color: white;
+  padding: 15px 24px;
+  border-radius: 24px;
+  font-size: 15px;
+  border: none;
+  font-weight: 700;
+}
+
+.kanban-container {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-auto-columns: 1fr; */
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+}
+
+.column-colour {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.column-task-counter {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+}
+
+.column-tasks-container {
+  display: grid;
+  gap: 20px;
+}
+
+.task-container {
+  background-color: white;
+  padding: 25px 15px;
+  box-shadow: 0px 4px 6px 0px #364E7E1A;
+  border-radius: 8px;
 }
