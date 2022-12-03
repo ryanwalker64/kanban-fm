@@ -11,14 +11,14 @@ import Task from './components/Task';
 function App() {
   const [boards, setBoards] = useState(database.boards)
   const [activeBoard, setActiveBoard] = useState(0)
+
   // Toggle Screen Brightness
   const [brightnessChecked, setBrightnessChecked] = useState(false);
+
   //Modal
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState();
   const [modalType, setModalType] = useState();
-
-
 
   function toggleBrightness(val)  { setBrightnessChecked(val)}
 
@@ -42,6 +42,7 @@ function App() {
         activeBoard={boards[activeBoard]}
         onClose={() => setShowModal(false)}
       />
+
       <Sidebar
         database={boards}
         toggleBrightness={toggleBrightness}
@@ -49,10 +50,12 @@ function App() {
         activeBoard={boards[activeBoard]}
         setBoardAsActive={setBoardAsActive}
       />
+
       <Main 
         activeBoard={boards[activeBoard]}
         toggleModal={toggleModal}
       />
+
     </div>
   );
 }

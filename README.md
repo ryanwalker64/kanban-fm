@@ -1,6 +1,6 @@
 
-[x] - change boards + show active
-[x] - view a task modal
+[x] change boards + show active
+[x] view a task modal
 [ ] - create a task modal
 [ ] - create a board modal
 [ ] - delete a task modal
