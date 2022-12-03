@@ -100,7 +100,23 @@
 
 .modal-subtask-input-container {
     display: flex;
-    row-gap: 10px;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.modal-subtask-input-container > .modal-input {
+    width: 100%;
+}
+
+.delete-subtask {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.modal-subtasks-group {
+    display: flex;
+    row-gap: 20px;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 

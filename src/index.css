@@ -30,6 +30,7 @@ code {
 
 .App {
   display: flex;
+  min-height: 100vh;
 }
 
 .heading-medium {
@@ -42,6 +43,7 @@ code {
 .sidebar {
   width: 300px;
   max-height: 100vh;
+  height: inherit;
   /* position: absolute; */
   background-color: white;
   display: flex;

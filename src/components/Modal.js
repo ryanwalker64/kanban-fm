@@ -1,5 +1,7 @@
 import "../modal.css"
 import { useEffect } from "react"
+import ModalTaskPreview from "./ModalTaskPreview"
+import ModalCreateTask from "./ModalCreateTask"
 
 export default function Modal(props) {
     useEffect(() => {
@@ -20,11 +22,18 @@ export default function Modal(props) {
         }
     }
     
+    let selectedModalContent
+    if(props.type === 'taskModal') {
+        selectedModalContent = <ModalTaskPreview data={props.content} activeBoard={props.activeBoard}/>
+    } else if (props.type === 'createTaskModal') {
+        selectedModalContent = <ModalCreateTask data={props.content} activeBoard={props.activeBoard}/>
+    }
+    
 
     return (
         <div className='modal-overlay' onClick={props.onClose}>
             <div className='modal-container' onClick={e => e.stopPropagation()}>
-                {props.children}
+                 {selectedModalContent} 
             </div>
         </div>
     )
