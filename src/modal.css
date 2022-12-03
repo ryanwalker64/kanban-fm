@@ -1,0 +1,106 @@
+.modal-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    width: 480px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 32px;
+}
+
+.modal-header{
+    margin-bottom: 24px;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+.modal-task-description {
+    font-size: 13px;
+    line-height: 1.5em;
+    margin-bottom: 24px;
+}
+
+.modal-subtitle {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.modal-subtask-container {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.modal-subtask {
+    /* padding: 12px; */
+    background-color: var(--light-grey-bg);
+    font-weight: 700;
+    color: black;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-subtask-title {
+    width: 100%;
+    padding: 12px 0 12px 12px;
+}
+
+.modal-subtask-checkbox {
+    margin-left: 12px;
+    font-size: 40px;
+}
+
+.modal-subtask-checkbox:checked + label {
+    text-decoration: line-through;
+    color: var(--medium-grey);
+
+}
+
+.modal-task-column-selector {
+    width: 100%;
+    border: none;
+    outline: 1px solid rgba(130, 143, 163, 0.25);
+    border-right: 16px solid transparent;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.modal-input-container {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input {
+    font-family: 'Plus Jakarta Sans';
+    border: 1px solid rgba(130, 143, 163, 0.25);
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.modal-subtask-input-container {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+}
+

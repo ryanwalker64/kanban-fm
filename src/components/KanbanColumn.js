@@ -1,8 +1,13 @@
 import Task from "./Task"
 
-export default function KanbanColumn({column}) {
+export default function KanbanColumn({column, toggleModal}) {
 
-    const tasks = column.tasks.map(taskData => <Task key={taskData.title} task={taskData}/>)
+    const tasks = column.tasks.map(taskData =>{ 
+      return <Task 
+      key={taskData.title} 
+      task={taskData}
+      toggleModal={toggleModal}/>
+    })
 
     return (
         <div className='kanban-column'>

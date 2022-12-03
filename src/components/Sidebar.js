@@ -7,21 +7,20 @@ import iconLightTheme from "../assets/icon-light-theme.svg"
 import iconDarkTheme from "../assets/icon-dark-theme.svg"
 import iconShowSidebar from "../assets/icon-show-sidebar.svg"
 import iconHideSidebar from "../assets/icon-hide-sidebar.svg"
+import BoardNavigator from './BoardNavigator';
 
-function Board(props) {
-  return (
-    <li className="board-selector" data-board="">
-            <img src={iconboard} alt="logo" className='board-selector-icon'/>
-            <span className="board-selector-name">{props.name}</span>
-    </li>
-  )
-}
 
 export default function Sidebar(props) {
   const [sidebarVisibility, setSidebarVisibility] = useState('active')
 
   const boards = props.database.map(board => {
-    return <Board name={board.name} key={board.name}/>
+    return <BoardNavigator 
+    name={board.name} 
+    key={board.id} 
+    id={board.id} 
+    activeBoard={props.activeBoard}
+    setBoardAsActive={props.setBoardAsActive}
+    />
   })
 
   function toggleSidebar() {
